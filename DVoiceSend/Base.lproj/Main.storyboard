@@ -18,20 +18,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aCS-8G-I8v"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favicon" translatesAutoresizingMaskIntoConstraints="NO" id="WUR-yU-XKI" customClass="favicon">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="c3G-rI-gmD"/>
+                                    <constraint firstAttribute="height" constant="74" id="yLr-em-2hg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="等待输入" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsd-mf-zlq">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="aCS-8G-I8v" secondAttribute="trailing" id="6Oq-of-Vw0"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aCS-8G-I8v" secondAttribute="bottom" id="SvU-XE-5tN"/>
-                            <constraint firstItem="aCS-8G-I8v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="j5q-hd-g0H"/>
-                            <constraint firstItem="aCS-8G-I8v" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qcU-oe-DFf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Gsd-mf-zlq" secondAttribute="bottom" constant="316" id="AG3-pP-lSb"/>
+                            <constraint firstItem="Gsd-mf-zlq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="Lyf-yY-Hb1"/>
+                            <constraint firstItem="Gsd-mf-zlq" firstAttribute="top" secondItem="WUR-yU-XKI" secondAttribute="bottom" constant="22" id="XeH-Yf-cMG"/>
+                            <constraint firstItem="WUR-yU-XKI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="cXP-GW-dvT"/>
+                            <constraint firstItem="WUR-yU-XKI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xAq-Rc-1Bq"/>
+                            <constraint firstAttribute="trailing" secondItem="Gsd-mf-zlq" secondAttribute="trailing" constant="10" id="xqa-Bb-Jai"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="voiceSendLabel" destination="Gsd-mf-zlq" id="4Up-BJ-Zoa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="66.11694152923539"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="favicon" width="159" height="147"/>
+    </resources>
 </document>

@@ -13,6 +13,10 @@
 
 @interface DVoiceRecognitionViewController ()<isrIdentifyDelegate>
 
+
+@property (weak, nonatomic) IBOutlet UILabel *voiceSendLabel;
+
+
 @property (nonatomic, strong) UIImageView     *voiceIconImage;
 @property (nonatomic, strong) UILabel         *voiceIocnTitleLable;
 @property (nonatomic, strong) UIView          *voiceImageSuperView;
@@ -121,6 +125,8 @@
 -(void)inputButtonAction:(UIButton *)button{
     
 }
+
+//语音回调
 - (void) onResultsStringisrIdentifyDelegate:(NSString*) results isLast:(BOOL)isLast{
     self.voiceRecognitionIsEnd = isLast;
     if ([results length] > 0) {
@@ -130,7 +136,7 @@
     
     if (isLast && self.touchIsEnd) {
         if (!self.voiceIsCancel && [self.voiceString length] > 0) {
-//            self.voiceRecognitionDidEnd(self.voiceString);
+            _voiceSendLabel.text=self.voiceString;
             
         }
     }
@@ -142,9 +148,9 @@
     }
     
 }
-
+//错误信息
 - (void) onErrorStringisrIdentifyDelegate:(IFlySpeechError *)error{
-    
+    _voiceSendLabel.text=self.voiceString;
 }
 
 -(void)touchupglide{
@@ -163,9 +169,7 @@
     self.voiceImageSuperView.hidden = YES;
     self.touchIsEnd = YES;
     [_gesturesView.voiceButton setTitle:@"按住说话" forState:UIControlStateNormal];
-    //    if (!self.voiceIsCancel && [self.voiceString length] > 0) {
-    //        [self.delegate inputViewDidselectedSendButton:self text:self.voiceString];
-    //    }
+    
 }
 
 
