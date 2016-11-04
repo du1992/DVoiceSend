@@ -35,8 +35,6 @@
 
 + (DisrIdentifyObject*) sharedInstance;
 
--(void)detectionStart;
-
 /**
  设置识别参数
  ****/
@@ -47,6 +45,13 @@
  *****/
 - (void)startBtnHandler;
 
-
+/**
+ 取消
+ ****/
+-(void)detectionStart;
+/**
+ 完成
+ ****/
+-(void)stopListening;
 
 @end

@@ -256,7 +256,9 @@ static DisrIdentifyObject *isrIdentifydObj = nil;
    
 }
 
-
+-(void)stopListening{
+    [_iFlySpeechRecognizer stopListening];
+}
 
 
 @end

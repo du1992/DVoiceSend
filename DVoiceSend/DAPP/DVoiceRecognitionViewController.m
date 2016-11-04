@@ -167,6 +167,11 @@
 
 -(void)touchDidEnd{
     self.voiceImageSuperView.hidden = YES;
+    if (self.voiceIsCancel==YES) {
+        [[DisrIdentifyObject sharedInstance] detectionStart];
+    }else{
+        [[DisrIdentifyObject sharedInstance] stopListening];
+    }
     self.touchIsEnd = YES;
     [_gesturesView.voiceButton setTitle:@"按住说话" forState:UIControlStateNormal];
     
