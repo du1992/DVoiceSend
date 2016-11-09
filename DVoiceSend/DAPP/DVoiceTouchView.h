@@ -17,6 +17,7 @@
 @property (nonatomic, copy) void (^touchEnd) ();
 @property (nonatomic, strong) UIButton *voiceButton;
 
-@property (nonatomic) int areaY;
+@property (nonatomic) int areaY;//设置识别高度
+@property (nonatomic) int clickTime;//设置长按时间
 
 @end

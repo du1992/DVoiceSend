@@ -46,6 +46,7 @@
     [self.view addSubview:gesturesView];
     self.gesturesView = gesturesView;
     self.gesturesView.areaY=-40;//设置滑动高度
+    self.gesturesView.clickTime=0.5;//设置长按时间
     gesturesView.touchBegan = ^(){
         //开始长按
         [weakSelf touchDidBegan];

@@ -25,6 +25,7 @@
     if (self) {
         self.isBegan = NO;
         self.areaY=-40;
+        self.clickTime=0.5;
         UIButton *voiceButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [self addSubview:voiceButton];
         voiceButton.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -47,7 +48,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event{
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(timeAction) userInfo:nil repeats:NO];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:self.clickTime target:self selector:@selector(timeAction) userInfo:nil repeats:NO];
     NSLog(@"++++++++++++++++++开始");
     
     self.timer = timer;
